@@ -1,4 +1,4 @@
-console.log("Twitter Extension Loaded.");
+console.log("Twitter Extensions Loaded.");
 
 $("#new-tweets-bar").live("click", function() {
   console.log("New Tweets Bar clicked.");
