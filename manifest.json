@@ -1,0 +1,14 @@
+{
+  "name": "twitter.com extensions",
+  "version": "1.0",
+  "description": "Extensions for twitter.com",
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.twitter.com/*", "http://*.twitter.com/*", "http://twitter.com/*", "https://twitter.com/*"],
+      "js": ["jquery.js", "twitter.js"]
+    }
+  ]
+}
