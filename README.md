@@ -7,8 +7,8 @@ To disable any feature, simply remove its file's reference from `manifest.json`.
 
 - `new-tweets-click.js`
   - When clicking on "23 new tweets" the window will scroll to the first new tweet.
-- `border-radius-fix.js`
-  - Removes border-radius from `#page-container` to fix a Google Chrome Unstable perfomance issue.
+- `display-ragesfaces-inline`
+  - Looks for ragefac.es-links in displayed tweets every 2 seconds and adds their thumb inline. 
 
 ### Installation
 
