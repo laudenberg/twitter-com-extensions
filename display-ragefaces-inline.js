@@ -4,7 +4,7 @@ function inline_ragefaces() {
       var elem = $(this); 
       elem.data("has_rageface", true);
       console.log("starting xhr")
-      $.get("http://ragefac.es/api/id/100," + RegExp.$1, function(data) {
+      $.get("http://ragefac.es/api/id/" + RegExp.$1, function(data) {
         console.log(data.items[0].face_filename);
         var parent = elem.parent();
         elem.detach();
