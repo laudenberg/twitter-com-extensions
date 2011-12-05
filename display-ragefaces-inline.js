@@ -15,11 +15,15 @@ function inline_ragefaces() {
           html(elem.html($("<img>").attr("src", "http://ragefac.es/faces/thumb_" + data.items[0].face_filename + ".png")))
         );
       }, "json");
+    } else if ($(this).data("ultimateUrl") && !$(this).data("has_rageface") && !$(this).data("has_redirection")) {
+      $(this).data("has_redirection", true);
+      $(this).html($(this).data("ultimateUrl"));
     }
   })
 }
 
 $(function() {
+  console.log("Display Ragefaces Inline loaded.")
   setInterval(inline_ragefaces, 2000);
 })
 

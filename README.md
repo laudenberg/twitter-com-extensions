@@ -8,7 +8,8 @@ To disable any feature, simply remove its file's reference from `manifest.json`.
 - `new-tweets-click.js`
   - When clicking on "23 new tweets" the window will scroll to the first new tweet.
 - `display-ragefaces-inline.js`
-  - Looks for ragefac.es-links in displayed tweets every 2 seconds and adds their thumb inline. 
+  - Looks for ragefac.es-links in displayed tweets every 2 seconds and adds their thumb inline.
+  - Also unshortens any shortener-URLs (will be refactored).
 
 ### Installation
 
