@@ -1,5 +1,5 @@
 function inline_ragefaces() {
-  $(".tweet-text a").each(function() {
+  $(".js-tweet-text a").each(function() {
     if ($(this).data("ultimateUrl") && $(this).data("ultimateUrl").match(/^http:\/\/ragefac.es\/(\d+)/) && !$(this).data("has_rageface")) {
       var elem = $(this); 
       elem.data("has_rageface", true);
