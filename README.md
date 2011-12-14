@@ -11,12 +11,9 @@ To disable any feature, simply remove its file's reference from `manifest.json`.
   - Looks for ragefac.es-links in displayed tweets every 2 seconds and adds their thumb inline.
   - Also unshortens any shortener-URLs (will be refactored).
 
-### Installation
+### Installation and Upgrading
 
-From the Google Chrome Extensions Developer Documentation:
-
-- Bring up the extensions management page by clicking the wrench icon and choosing Tools > Extensions.
-- If Developer mode has a + by it, click the + to add developer information to the page. The + changes to a -, and more buttons and information appear.
-- Click the Load unpacked extension button. A file dialog appears.
-- In the file dialog, navigate to your extension's folder and click OK.
+- `cd` into the extension's root and run `make`.
+- If `make` cannot find `google-chrome` put the Chrome executable into your `$PATH`.
+- Point your browser to `packed/twitter-com-extensions.crx` inside the extension's root.
 

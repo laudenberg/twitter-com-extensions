@@ -1,6 +1,6 @@
 {
   "name": "twitter.com extensions",
-  "version": "1.0",
+  "version": "0.1",
   "description": "Extensions for twitter.com",
   "permissions": [
     "tabs", "http://ragefac.es/*"
