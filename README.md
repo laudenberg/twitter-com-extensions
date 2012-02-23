@@ -17,3 +17,7 @@ Any feature can be disbled in the extension's options.
 - If `make` cannot find `google-chrome` put the Chrome executable into your `$PATH`.
 - Point your browser to `packed/twitter-com-extensions.crx` inside the extension's root.
 
+### Strategy
+
+To be able to change the contents of tweets, the extension looks every two seconds whether new tweets arrived at the DOM and then operates on them. For the worst case it may happen, that tweets appear standard for the first two seconds until they change. We are looking into measures to intercept events like Ajax Requests to better respond to changes. We are glad about every good advice!
+
