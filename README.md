@@ -1,15 +1,15 @@
-Some Chrome extensions for twitter.com
-===
+# Hipster Twitter
+
+## Some Chrome extensions for twitter.com
 
 ### Features
 
-To disable any feature, simply remove its file's reference from `manifest.json`.
+- When clicking on "23 new tweets" the window will scroll to the first new tweet.
+- Switches *@screenname* with *Full Name* where applicable for better user identification.
+- Replaces ragefac.es-links by their thumb inline.
+- Unshortens any shortened URLs.
 
-- `new-tweets-click.js`
-  - When clicking on "23 new tweets" the window will scroll to the first new tweet.
-- `display-ragefaces-inline.js`
-  - Looks for ragefac.es-links in displayed tweets every 2 seconds and adds their thumb inline.
-  - Also unshortens any shortener-URLs (will be refactored).
+Any feature can be disbled in the extension's options. 
 
 ### Installation and Upgrading
 
