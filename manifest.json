@@ -1,15 +1,17 @@
 {
-  "name": "twitter.com extensions",
+  "name": "Hipster Twitter",
   "version": "0.1",
-  "description": "Extensions for twitter.com",
+  "description": "Hipster Twitter Extensions for twitter.com",
   "permissions": [
     "tabs", "http://ragefac.es/*"
   ],
   "content_scripts": [
     {
       "matches": ["https://*.twitter.com/*", "http://*.twitter.com/*", "http://twitter.com/*", "https://twitter.com/*"],
-      "js": ["jquery.js", "new-tweets-click.js", "display-ragefaces-inline.js"]
+      "js": ["jquery.js", "hipster-twitter.js"]
     }
-  ]
+  ],
+  "background_page": "background.html",
+  "options_page": "options.html"
 }
 

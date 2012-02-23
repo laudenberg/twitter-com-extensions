@@ -6,7 +6,7 @@ all: files
 dirs:
 	mkdir -p packed/twitter-com-extensions
 	
-files: dirs $(PD)/manifest.json $(PD)/jquery.js $(PD)/new-tweets-click.js $(PD)/display-ragefaces-inline.js
+files: dirs $(PD)/manifest.json $(PD)/jquery.js $(PD)/hipster-twitter.js $(PD)/background.html $(PD)/options.html
 
 $(PD)/manifest.json: manifest.json
 	cp manifest.json $(PD)
@@ -14,9 +14,15 @@ $(PD)/manifest.json: manifest.json
 $(PD)/jquery.js: jquery.js
 	cp jquery.js $(PD)
 
-$(PD)/new-tweets-click.js: new-tweets-click.js
-	cp new-tweets-click.js $(PD)
+$(PD)/hipster-twitter.js: hipster-twitter.js
+	cp hipster-twitter.js $(PD)
 
-$(PD)/display-ragefaces-inline.js: display-ragefaces-inline.js
-	cp display-ragefaces-inline.js $(PD)
+$(PD)/background.html: background.html
+	cp background.html $(PD)
 
+$(PD)/options.html: options.html
+	cp options.html $(PD)
+
+install:
+	google-chrome ./$(PD)/twitter-com-extensions.crx
+  
