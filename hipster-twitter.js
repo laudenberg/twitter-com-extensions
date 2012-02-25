@@ -3,7 +3,7 @@ var options = {}
 function hipster_loop() {
   get_options();
 
-  $("div.stream-item").each(function() {
+  $("#stream-items-id div.stream-item").each(function() {
     var stream_item = $(this);
 
     stream_item.find("p.js-tweet-text a").each(function() {
