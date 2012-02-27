@@ -84,7 +84,8 @@ $(function() {
     }
 
   });
-
+  
+  hipster_loop();
 });
 
 function get_options() {
