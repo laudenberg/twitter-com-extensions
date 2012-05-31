@@ -9,7 +9,7 @@
 ![Names old](https://raw.github.com/laudenberg/twitter-com-extensions/master/names-old.png)
 ![Names new](https://raw.github.com/laudenberg/twitter-com-extensions/master/names-new.png)
 - Replaces ragefac.es-links by their thumb inline. Before and after:
-![Names old](https://raw.github.com/laudenberg/twitter-com-extensions/master/reagefaces-old.png)
+![Names old](https://raw.github.com/laudenberg/twitter-com-extensions/master/ragefaces-old.png)
 ![Names new](https://raw.github.com/laudenberg/twitter-com-extensions/master/ragefaces-new.png)
 - Unshortens any shortened URLs. Before and after:
 ![Names old](https://raw.github.com/laudenberg/twitter-com-extensions/master/unshorten-old.png)
