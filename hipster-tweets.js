@@ -67,7 +67,7 @@ function hipster_loop() {
 }
 
 $(function() {
-  console.log("Hipster Twitter loaded.")
+  console.log("Hipster Tweets loaded.")
   setInterval(hipster_loop, 2000);
 
   $("#page-container").on("click", ".new-tweets-bar", function() {

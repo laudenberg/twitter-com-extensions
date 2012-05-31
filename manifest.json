@@ -1,7 +1,7 @@
 {
-  "name": "Hipster Twitter",
+  "name": "Hipster Tweets",
   "version": "0.1",
-  "description": "Hipster Twitter Extensions for twitter.com",
+  "description": "Extensions for twitter.com",
   "permissions": [
     "tabs", "http://ragefac.es/*"
   ],

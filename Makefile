@@ -6,7 +6,7 @@ all: files
 dirs:
 	mkdir -p packed/twitter-com-extensions
 	
-files: dirs $(PD)/manifest.json $(PD)/jquery.js $(PD)/hipster-twitter.js $(PD)/background.html $(PD)/options.html
+files: dirs $(PD)/manifest.json $(PD)/jquery.js $(PD)/hipster-tweets.js $(PD)/background.html $(PD)/options.html
 
 $(PD)/manifest.json: manifest.json
 	cp manifest.json $(PD)
@@ -14,8 +14,8 @@ $(PD)/manifest.json: manifest.json
 $(PD)/jquery.js: jquery.js
 	cp jquery.js $(PD)
 
-$(PD)/hipster-twitter.js: hipster-twitter.js
-	cp hipster-twitter.js $(PD)
+$(PD)/hipster-tweets.js: hipster-tweets.js
+	cp hipster-tweets.js $(PD)
 
 $(PD)/background.html: background.html
 	cp background.html $(PD)
