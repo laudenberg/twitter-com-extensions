@@ -5,13 +5,17 @@
 ### Features
 
 - When clicking on "23 new tweets" the window will scroll to the first new tweet.
-- Switches *@screenname* with *Full Name* where applicable for better user identification.
+- Switches *@screenname* with *Full Name* where applicable for better user identification. Before and after:
 ![Names old](https://raw.github.com/laudenberg/twitter-com-extensions/master/names-old.png)
 ![Names new](https://raw.github.com/laudenberg/twitter-com-extensions/master/names-new.png)
-- Replaces ragefac.es-links by their thumb inline.
-- Unshortens any shortened URLs.
+- Replaces ragefac.es-links by their thumb inline. Before and after:
+![Names old](https://raw.github.com/laudenberg/twitter-com-extensions/master/reagefaces-old.png)
+![Names new](https://raw.github.com/laudenberg/twitter-com-extensions/master/ragefaces-new.png)
+- Unshortens any shortened URLs. Before and after:
+![Names old](https://raw.github.com/laudenberg/twitter-com-extensions/master/unshorten-old.png)
+![Names new](https://raw.github.com/laudenberg/twitter-com-extensions/master/unshorten-new.png)
 
-Any feature can be disbled in the extension's options. 
+Any feature can be disabled in the extension's options. 
 
 ### Installation and Upgrading
 
