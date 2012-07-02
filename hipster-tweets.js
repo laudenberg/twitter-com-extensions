@@ -54,7 +54,9 @@ function hipster_loop() {
         var user_profile_link = stream_item.find("div.stream-item-footer a.js-user-profile-link");
 
         if (user_profile_link.length) {
-          user_profile_link.html("<b>@" + user_profile_link.attr("href").substring(1) + " <b>(" + user_profile_link.html() + ")");
+          var user_profile_href = user_profile_link.attr("href"); 
+          var user_name = user_profile_href.substring(user_profile_href.lastIndexOf("/") +  1);
+          user_profile_link.html("<b>@" + user_name + " <b>(" + user_profile_link.html() + ")");
         }
 
         stream_item.data("has_retweet_name_changed", true);
