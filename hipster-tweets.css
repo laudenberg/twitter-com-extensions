@@ -6,6 +6,10 @@
   display: block !important;
 }
 
+#stream-items-id .processed ~ .stream-item {
+  display: block !important;
+}
+
 #offscreen {
   width: 522px;
   display: block;

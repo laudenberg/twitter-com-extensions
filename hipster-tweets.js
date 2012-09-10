@@ -66,6 +66,7 @@ function unshorten_url(link) {
 }
 
 function process_tweet(tweet) {
+
   tweet.find("p.js-tweet-text a").each(function() {
     show_rageface_inline($(this));
     unshorten_url($(this));
@@ -81,24 +82,32 @@ function hipster_loop() {
   // process tweets that are offscreen
   $("#offscreen").find(".stream-item").each(function() {
     process_tweet($(this));
-    console.log("process")
   });
 
   // send offscreen tweets to timeline
   var offscreen_height = $("#offscreen").outerHeight();
   $("#offscreen").find(".stream-item").each(function() {
     $("#stream-items-id").prepend($(this));
-    console.log("prepend");
   });
   $(document).scrollTop($(document).scrollTop() + offscreen_height);
 
   // send new tweets offscreen
-  $("#stream-items-id .stream-item").not(".processed").each(function() {
+  $("#stream-items-id .stream-item").not(".processed").not(".processed ~ .stream-item").each(function() {
     $("#offscreen").prepend($(this));
   });
 
   // click new tweets button
   $(".new-tweets-bar").click();
+
+  // process items added at the bottom...
+  $("#stream-items-id").find(".processed ~ .stream-item").not(".processed").each(function() {
+    var tweet = $(this);
+
+    // ...after giving them time to breathe
+    setTimeout(function() {
+      process_tweet(tweet);
+    }, 3000);
+  });
 }
 
 $(function() {
@@ -110,7 +119,6 @@ $(function() {
   setTimeout(function() {
     
     $("#stream-items-id .stream-item").each(function() {
-      console.log("hello?");
       process_tweet($(this));
     });
 
