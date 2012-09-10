@@ -1,0 +1,20 @@
+.hipster-tweets-loaded .stream-item {
+  display: none !important;
+}
+
+#stream-items-id .processed {
+  display: block !important;
+}
+
+#offscreen {
+  width: 522px;
+  display: block;
+  position: absolute;
+  left: -100000px;
+  top: 10px;
+  z-index: 2000;
+}
+
+#offscreen .stream-item {
+  display: block !important;
+}
