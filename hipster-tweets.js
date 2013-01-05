@@ -9,10 +9,14 @@ function switch_names(tweet) {
     var user_profile_link = tweet.find("div.stream-item-header a.js-user-profile-link");
     var fullname = user_profile_link.find(".fullname");
     var username = user_profile_link.find(".username");
-    var tmp = fullname.html();
-    fullname.html(username.html().replace(/<[^>]+>/g, "").replace(/\s/g, ""));
-    username.html(tmp);
-    tweet.data("has_name_changed", true);
+
+    if (fullname.length > 0 && username.length > 0) {
+      var tmp = fullname.html();
+      fullname.html(username.html().replace(/<[^>]+>/g, "").replace(/\s/g, ""));
+      username.html(tmp);
+      tweet.data("has_name_changed", true);
+    }
+
   }
 
   // retweet name
@@ -31,8 +35,8 @@ function switch_names(tweet) {
 }
 
 function show_rageface_inline(link, index, parent) {
-  if (!link.data("ultimateUrl") ||
-      !link.data("ultimateUrl").match(/^http:\/\/ragefac.es\/(\d+)/) ||
+  if (!link.data("expandedUrl") ||
+      !link.data("expandedUrl").match(/^http:\/\/ragefac.es\/(\d+)/) ||
       link.data("has_rageface"))
     return;
 
@@ -67,12 +71,13 @@ function show_ragefaces_inline(tweet) {
 
 function unshorten_url(link) {
   if (!option_is_set("unshorten-urls") ||
-      !link.data("ultimateUrl") ||
+      !link.data("expandedUrl") ||
       link.data("has_rageface") ||
       link.data("has_redirection"))
     return;
+
   link.data("has_redirection", true);
-  link.html(link.data("ultimateUrl"));
+  link.html(link.data("expandedUrl"));
 }
 
 function process_tweet(tweet) {
@@ -132,7 +137,7 @@ $(function() {
       process_tweet($(this));
     });
 
-    $("body").addClass("hipster-tweets-loaded");
+    $("html").addClass("hipster-tweets-loaded");
     setInterval(hipster_loop, 1000);
   }, 5000);
 
