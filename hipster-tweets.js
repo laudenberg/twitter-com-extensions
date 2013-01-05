@@ -30,29 +30,39 @@ function switch_names(tweet) {
 
 }
 
-function show_rageface_inline(link) {
-  if (true ||
-      !option_is_set("show-ragefaces-inline") ||
-      !link.data("ultimateUrl") ||
+function show_rageface_inline(link, index, parent) {
+  if (!link.data("ultimateUrl") ||
       !link.data("ultimateUrl").match(/^http:\/\/ragefac.es\/(\d+)/) ||
       link.data("has_rageface"))
     return;
 
+  var rageface_number = RegExp.$1;
   link.data("has_rageface", true);
-  console.log("starting xhr");
 
-  $.get("http://ragefac.es/api/id/" + RegExp.$1, function(data) {
-    console.log(data[0][0].image_filename);
-    var parent = link.parent();
-    link.detach();
-    parent.append($("<div>").css("clear", "both"));
-    parent.prepend(
-      $("<div>").
-      css("float", "right").
-      html(link.html($("<img>").attr("src", "http://ragefaces.s3.amazonaws.com/" + data[0][0]._id + "/thumb_" + data[0][0].image_filename + ".png")))
-    );
+  var rageface = $("<div class='rageface'>");
+  parent.prepend(rageface);
+
+  console.log("starting xhr");
+  $.get("http://ragefac.es/api/id/" + rageface_number, function(data) {
+    if (!data || !data[0] || !data[0][0] || !data[0][0].image_filename || !data[0][0]._id)
+      return;
+
+    rageface.html(link.clone().html($("<img>").attr("src", "http://ragefaces.s3.amazonaws.com/" + data[0][0]._id + "/thumb_" + data[0][0].image_filename)))
   }, "json");
 
+}
+
+function show_ragefaces_inline(tweet) {
+  if (!option_is_set("show-ragefaces-inline"))
+    return;
+
+  var text = tweet.find("p.js-tweet-text");
+  
+  text.find("a").each(function(index) {
+    show_rageface_inline($(this), index, text);
+  });
+
+  text.append($("<div>").css("clear", "both"));
 }
 
 function unshorten_url(link) {
@@ -66,9 +76,9 @@ function unshorten_url(link) {
 }
 
 function process_tweet(tweet) {
+  show_ragefaces_inline(tweet);
 
-  tweet.find("p.js-tweet-text a").each(function() {
-    show_rageface_inline($(this));
+  tweet.find("p.js-tweet-text a").each(function(index) {
     unshorten_url($(this));
   });
 

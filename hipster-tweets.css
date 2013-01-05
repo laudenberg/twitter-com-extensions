@@ -22,3 +22,9 @@
 #offscreen .stream-item {
   display: block !important;
 }
+
+.rageface {
+  width: 100px;
+  height: 100px;
+  float: right;
+}
